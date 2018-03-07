@@ -9,7 +9,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM usuario");
 		echo "<h4>".$res['email']."</h4>";
 		echo "<h4>".$res['password']."</h4>";
 		echo "<h4>".$res['nombre']."</h4>";
-		
 	}
 	mysqli_close($mysqli);
 	?>
