@@ -60,6 +60,7 @@
                   <th>Codigo</th>
                   <th>Nombre</th>
                   <th>Precio</th>
+                  <th>Imagen</th>
                 </tr>
               </thead>
               <tbody>
@@ -71,6 +72,7 @@ for($cod = 0; $cod <= $cuenta; $cod++) {
   
   echo "<tr>";
   $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
+  $fabris = "SELECT fabricante.nombre from fabricante, producto WHERE fabricante.codigo=codigo_fabricante";
 
   $i=0;
 
@@ -78,6 +80,8 @@ for($cod = 0; $cod <= $cuenta; $cod++) {
   echo "<td>".$res['codigo']."</td>";
   echo "<td>".$res['nombre']."</td>";
   echo "<td>".$res['precio']."</td>";
+  echo "<td><img src=\"".$res['imagen']."\" width=\"150\" height=\"100\"/></td>";
+  echo "<td>".$res['descripcion']."</td>";
   $i++; 
   }
   echo "</tr>";

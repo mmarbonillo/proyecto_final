@@ -36,10 +36,10 @@ insert into fabricante(nombre) values('Apple');
 insert into fabricante(nombre) values('MSI');
 
 
-insert into producto(nombre, precio, codigo_fabricante) values('Raton Logitech', '9.99', '1');
-insert into producto(nombre, precio, codigo_fabricante) values('Portatil HP', '599.99', '2');
-insert into producto(nombre, precio, codigo_fabricante) values('Sobremesa ACER', '399.99', '3');
-insert into producto(nombre, precio, codigo_fabricante) values('Teclado Lenovo', '14.99', '4');
-insert into producto(nombre, precio, codigo_fabricante) values('Auriculares Apple', '19.99', '5');
-insert into producto(nombre, precio, codigo_fabricante) values('GTX 960', '299.99', '6');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Raton Logitech', '9.99', '1', '../fotos/1.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Portatil HP', '599.99', '2', '../fotos/2.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Sobremesa ACER', '399.99', '3', '../fotos/3.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Teclado Lenovo', '14.99', '4', '../fotos/4.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Auriculares Apple', '19.99', '5', '../fotos/5.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('GTX 960', '299.99', '6', '../fotos/6.png', 'Raton mas simple que el mecanismo de un botijo');
 

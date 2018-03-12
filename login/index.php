@@ -237,9 +237,34 @@
     <script src="../../../../assets/js/vendor/holder.min.js"></script>
   
 <?php
+include("../config.php");
+$consul = mysqli_query($mysqli, "SELECT * FROM producto");
+$cuenta = mysqli_num_rows($consul);
+for($cod = 0; $cod <= $cuenta; $cod++) {
+  
+  echo "<tr>";
+  $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
+
+  $i=0;
+
+  while ($res = mysqli_fetch_array($query)){
+  echo "<td>".$res['codigo']."</td>";
+  echo "<td>".$res['nombre']."</td>";
+  echo "<td>".$res['precio']."</td>";
+  echo "<td>".$res['imagen']."</td>";
+  echo "<td>".$res['descripcion']."</td>";
+  $i++; 
+  }
+  echo "</tr>";
+}
+
+
+
+
+
 echo "<div class=\"col-md-4\">";
   echo "<div class=\"card mb-4 box-shadow\">";
-    echo "<img class=\"card-img-top\" data-src=\"holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail\" alt=\"Card image cap\">";
+    echo "<img class=\"card-img-top\" data-src=\"holder.js/348px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail\" alt=\"Card image cap\">";
       echo "<div class=\"card-body\">";
         echo "<p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>";
         echo "<div class=\"d-flex justify-content-between align-items-center\">";
@@ -259,13 +284,6 @@ echo "</div>";
 
 
 ?>
-  
-  
-  
-  
-  
-  
-  
   
   </body>
 </html>
