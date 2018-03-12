@@ -28,7 +28,7 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="res">
+      <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
@@ -50,7 +50,45 @@
           </div>
         </nav>
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
+          <h2>Productos</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Codigo</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php
+include("../config.php");
+$consul = mysqli_query($mysqli, "SELECT * FROM producto");
+$cuenta = mysqli_num_rows($consul);
+for($cod = 0; $cod <= $cuenta; $cod++) {
+  
+  echo "<tr>";
+  $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
+
+  $i=0;
+
+  while ($res = mysqli_fetch_array($query)){
+  echo "<td>".$res['codigo']."</td>";
+  echo "<td>".$res['nombre']."</td>";
+  echo "<td>".$res['precio']."</td>";
+  $i++; 
+  }
+  echo "</tr>";
+}
+
+
+?>
+              </tbody>
+            </table>
+          </div>
+        </main>
       </div>
     </div>
 
@@ -104,25 +142,7 @@
 </html>
 
 <?php
-include('../config.php');
 
-$query = mysqli_query($mysqli, "SELECT * FROM producto");
-
-$i=0;
-echo "<table align=\"center\">";
-  echo "<thead>
-    <th>NOMBRE</th>
-    <th>PRECIO</th>
-  </thead>";
-while ($res = mysqli_fetch_array($query)){    
-  echo"<tr>";                                
-  echo "<td>".$res['nombre']."</td>";
-  echo "<td>".$res['precio']."</td>";
-  echo "<td>".$res['imagen']."</td>"; 
-  echo"</tr>";
-  $i++; 
-}           
-echo "</table>";
 
 ?>
 <style type="text/css">
