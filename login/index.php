@@ -73,11 +73,10 @@ for($cod = 1; $cod <= $cuenta; $cod++) {
 
 
 while ($res = mysqli_fetch_array($query)){
-
-echo "<div class=\"col-md-4\">";
+/*echo "<div class=\"col-md-4\">";
   echo "<div class=\"card mb-4 box-shadow\">";
-    #echo "<a href=\"../productos/producto$cod.php\"><img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\">";
-    echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
+  echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
+    
       echo "<div class=\"card-body\">";
         echo "<p class=\"card-text\">".$res['descripcion']."</p>";
         echo "<div class=\"d-flex justify-content-between align-items-center\">";
@@ -89,7 +88,23 @@ echo "<div class=\"col-md-4\">";
       echo "</div>";
     echo "</div>";
   echo "</div>";
-echo "</div>";
+echo "</div>";*/
+echo "<br/>";
+              echo "<img src=\"".$res['imagen']."\"width=\"150\" height=\"150\"/>";
+              echo"<div class='col-md-4'>";
+              echo"<div class='card mb-4 box-shadow'>";
+              echo"<div class='card-body'>";
+              echo"<p class='card-text'>".$res['descripcion']."</p>";
+              echo"<div class='d-flex justify-content-between align-items-center'>";
+              echo"<div class='btn-group'>";
+              echo"<button type='button' class='btn btn-sm btn-outline-secondary'>View</button>";
+              echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
+              echo"</div>";
+              echo"<small class='text-muted'>9 mins</small>";
+              echo"</div>";
+              echo"</div>";
+              echo"</div>";
+              echo"</div>";
 
 
 }
