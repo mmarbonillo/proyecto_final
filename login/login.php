@@ -49,6 +49,7 @@ if($cuenta >= 1) {
 } else {
   $_SESSION['canAccess'] = false;
 }
+mysqli_close($mysqli);
 
 ?>
   </body>

@@ -18,11 +18,10 @@
 
   <body>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <ul class="navbar-nav px-3">
-        <!--<li class="nav-item text-nowrap">-->
+      <div class="navbar-nav px-3">
+        <a class="nav-link" href="#">Sign in</a>
         <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
+      </div>
     </nav>
 
     <header>
@@ -51,7 +50,7 @@
             <strong>Album</strong>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" class="prueba"></span>
           </button>
         </div>
       </div>
@@ -77,6 +76,7 @@ while ($res = mysqli_fetch_array($query)){
 
 echo "<div class=\"col-md-4\">";
   echo "<div class=\"card mb-4 box-shadow\">";
+    #echo "<a href=\"../productos/producto$cod.php\"><img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\">";
     echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
       echo "<div class=\"card-body\">";
         echo "<p class=\"card-text\">".$res['descripcion']."</p>";
@@ -122,10 +122,3 @@ echo "</div>";
     <script src="../../../../assets/js/vendor/holder.min.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
