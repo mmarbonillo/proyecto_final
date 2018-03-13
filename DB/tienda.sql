@@ -37,9 +37,9 @@ insert into fabricante(nombre) values('MSI');
 
 
 insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Raton Logitech', '9.99', '1', '../fotos/1.png', 'Raton mas simple que el mecanismo de un botijo');
-insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Portatil HP', '599.99', '2', '../fotos/2.png', 'Raton mas simple que el mecanismo de un botijo');
-insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Sobremesa ACER', '399.99', '3', '../fotos/3.png', 'Raton mas simple que el mecanismo de un botijo');
-insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Teclado Lenovo', '14.99', '4', '../fotos/4.png', 'Raton mas simple que el mecanismo de un botijo');
-insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Auriculares Apple', '19.99', '5', '../fotos/5.png', 'Raton mas simple que el mecanismo de un botijo');
-insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('GTX 960', '299.99', '6', '../fotos/6.png', 'Raton mas simple que el mecanismo de un botijo');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Portatil HP', '599.99', '2', '../fotos/2.png', 'Vaya palo para un portatil que en el fondo no vale pa na');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Sobremesa ACER', '399.99', '3', '../fotos/3.png', 'Sobremesa normalito para ofimatica y oficina');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Teclado Lenovo', '14.99', '4', '../fotos/4.png', 'Teclado muy normalito');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('Auriculares Apple', '19.99', '5', '../fotos/5.png', 'Auriculares caros pero bueno, se oyen bien y duran');
+insert into producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('GTX 960', '299.99', '6', '../fotos/6.png', 'Grafica buena la verdad');
 

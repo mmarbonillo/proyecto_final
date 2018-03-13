@@ -20,7 +20,7 @@
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <ul class="navbar-nav px-3">
         <!--<li class="nav-item text-nowrap">-->
-        <a class="nav-link" href="#" id="off">Sign out</a>
+        <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -57,160 +57,45 @@
       </div>
     </header>
 
-    <main role="main">
-
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
-        </div>
-      </section>
-
+    
       <div class="album py-5 bg-light">
         <div class="container">
 
           <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <?php
+include("../config.php");
+$consul = mysqli_query($mysqli, "SELECT * FROM producto");
+$cuenta = mysqli_num_rows($consul);
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+for($cod = 1; $cod <= $cuenta; $cod++) {
+  
+  echo "<tr>";
+  $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+while ($res = mysqli_fetch_array($query)){
+
+echo "<div class=\"col-md-4\">";
+  echo "<div class=\"card mb-4 box-shadow\">";
+    echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
+      echo "<div class=\"card-body\">";
+        echo "<p class=\"card-text\">".$res['descripcion']."</p>";
+        echo "<div class=\"d-flex justify-content-between align-items-center\">";
+        echo "<div class=\"btn-group\">";
+          echo "<button type=\"button\" onclick=\"location.href='../productos/producto$cod.php'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
+          echo "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>";
+        echo "</div>";
+        echo "<small class=\"text-muted\">9 mins</small>";
+      echo "</div>";
+    echo "</div>";
+  echo "</div>";
+echo "</div>";
+
+
+}
+
+}
+?>
           </div>
         </div>
       </div>
@@ -235,55 +120,12 @@
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <script src="../../../../assets/js/vendor/holder.min.js"></script>
-  
-<?php
-include("../config.php");
-$consul = mysqli_query($mysqli, "SELECT * FROM producto");
-$cuenta = mysqli_num_rows($consul);
-for($cod = 0; $cod <= $cuenta; $cod++) {
-  
-  echo "<tr>";
-  $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
-
-  $i=0;
-
-  while ($res = mysqli_fetch_array($query)){
-  echo "<td>".$res['codigo']."</td>";
-  echo "<td>".$res['nombre']."</td>";
-  echo "<td>".$res['precio']."</td>";
-  echo "<td>".$res['imagen']."</td>";
-  echo "<td>".$res['descripcion']."</td>";
-  $i++; 
-  }
-  echo "</tr>";
-}
-
-
-
-
-
-echo "<div class=\"col-md-4\">";
-  echo "<div class=\"card mb-4 box-shadow\">";
-    echo "<img class=\"card-img-top\" data-src=\"holder.js/348px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail\" alt=\"Card image cap\">";
-      echo "<div class=\"card-body\">";
-        echo "<p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>";
-        echo "<div class=\"d-flex justify-content-between align-items-center\">";
-        echo "<div class=\"btn-group\">";
-          echo "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
-          echo "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>";
-        echo "</div>";
-        echo "<small class=\"text-muted\">9 mins</small>";
-      echo "</div>";
-    echo "</div>";
-  echo "</div>";
-echo "</div>";
-
-
-
-
-
-
-?>
-  
   </body>
 </html>
+
+
+
+
+
+
+
