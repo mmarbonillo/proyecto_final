@@ -72,7 +72,7 @@ for($cod = 0; $cod <= $cuenta; $cod++) {
   
   echo "<tr>";
   $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
-  $fabris = "SELECT fabricante.nombre from fabricante, producto WHERE fabricante.codigo=codigo_fabricante";
+  $fabris = "SELECT fabricante.nombre AS fabricante from fabricante, producto WHERE fabricante.codigo=codigo_fabricante";
 
   $i=0;
 

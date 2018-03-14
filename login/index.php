@@ -19,8 +19,8 @@
   <body>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <div class="navbar-nav px-3">
-        <a class="nav-link" href="#">Sign in</a>
-        <a class="nav-link" href="#">Sign out</a>
+        <a class="nav-link" href="login.php">Sign in</a>
+        <a class="nav-link" href="logout.php">Sign out</a>
       </div>
     </nav>
 
@@ -97,7 +97,7 @@ echo "<br/>";
               echo"<p class='card-text'>".$res['descripcion']."</p>";
               echo"<div class='d-flex justify-content-between align-items-center'>";
               echo"<div class='btn-group'>";
-              echo"<button type='button' class='btn btn-sm btn-outline-secondary'>View</button>";
+              echo "<button type=\"button\" onclick=\"location.href='../productos/producto$cod.php'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
               echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
               echo"</div>";
               echo"<small class='text-muted'>9 mins</small>";
