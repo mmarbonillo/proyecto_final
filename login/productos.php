@@ -151,3 +151,4 @@ for($cod = 1; $cod <= $cuenta; $cod++) {
 <style type="text/css">
 <?php include('../css/productos.css'); ?>
 </style>
+

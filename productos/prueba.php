@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,44 +98,48 @@
 					</div>
 					<div class="col-md-6">
 						<div class="product-body">
-							<h2 class="product-name">Product Name Goes Here</h2>
-                            <h3 class="product-price">$32.50 </h3>
+                            <h2 class="product-name">
+                                <?php
+                                include('cosa.php');
+                                echo $name;
+                                ?>
+                            </h2>
+                            <h3 class="product-price">
+                                <?php
+                                include('cosa.php');
+                                echo "$prize €";
+                                ?>
+                            </h3>
                             <!--<del class="product-old-price">$45.00</del>-->
 							
 							<p><strong>Disponibilidad:</strong> En Stock</p>
 							<p><strong>Brand:</strong> E-SHOP</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<div class="product-options">
-								<ul class="color-option">
-									<li><span class="text-uppercase">Color:</span></li>
-									<li class="active"><a href="#" style="background-color:#475984;"></a></li>
-									<li><a href="#" style="background-color:#8A2454;"></a></li>
-									<li><a href="#" style="background-color:#BF6989;"></a></li>
-									<li><a href="#" style="background-color:#9A54D8;"></a></li>
-								</ul>
-							</div>
-
+							<p>
+                                <?php
+                                include('cosa.php');
+                                echo $descrip;
+                                ?>
+                            </p>
+							
 							<div class="product-btns">
 								<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-								<div class="pull-right">
-									<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-									<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-									<button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>
-								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="product-tab">
 							<ul class="tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab1">Details</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab1">Descripción</a></li>
+								<li><a data-toggle="tab" href="#tab1">Detalles</a></li>
 							</ul>
 							<div class="tab-content">
 								<div id="tab1" class="tab-pane fade in active">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-										irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p>
+                                        <?php
+                                        include('cosa.php');
+                                        echo $descrip;
+                                        ?>
+                                    </p>
 								</div>
 								
 							</div>
@@ -143,13 +148,6 @@
 
 				</div>
                 <!-- /Product Details -->
-
-<?php
-$codigo = $_GET['codigo'];
-echo "<h4>$codigo</h4>";
-?>
-
-
 
     </head>
     </body>
