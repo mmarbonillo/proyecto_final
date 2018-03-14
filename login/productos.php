@@ -68,11 +68,10 @@
 include("../config.php");
 $consul = mysqli_query($mysqli, "SELECT * FROM producto");
 $cuenta = mysqli_num_rows($consul);
-for($cod = 0; $cod <= $cuenta; $cod++) {
+for($cod = 1; $cod <= $cuenta; $cod++) {
   
   echo "<tr>";
   $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
-  $fabris = "SELECT fabricante.nombre AS fabricante from fabricante, producto WHERE fabricante.codigo=codigo_fabricante";
 
   $i=0;
 
