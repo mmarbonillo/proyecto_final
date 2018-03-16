@@ -87,8 +87,8 @@ while ($res = mysqli_fetch_array($query)){
         echo"<p class='card-text'>".$res['descripcion']."</p>";
         echo"<div class='d-flex justify-content-between align-items-center'>";
           echo"<div class='btn-group'>";
-            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
-            echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
+            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">Ver producto</button>";
+            echo"<button type='button' onclick=\"location.href='añadircarro.php?cod=".$res['codigo']."'\" class='btn btn-sm btn-outline-secondary'>Al carrito :D</button>";
           echo"</div>";
           echo"<small class='text-muted'>9 mins</small>";
         echo"</div>";
@@ -101,11 +101,9 @@ while ($res = mysqli_fetch_array($query)){
 
 }
 
-
+print_r($_SESSION['carro']);
 
 $arsa = $_GET['arsa'];
-
-echo $arsa;
 
 if(!empty($_GET['arsa'])) {
   header('Location: busqueda.php');

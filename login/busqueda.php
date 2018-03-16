@@ -26,7 +26,7 @@
       </div>
     </nav>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">Company name</a>
 
       <form method="get">
       <input name="arsa" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" method="get">
@@ -56,8 +56,8 @@ while ($res = mysqli_fetch_array($consulta)){
         echo"<p class='card-text'>".$res['descripcion']."</p>";
         echo"<div class='d-flex justify-content-between align-items-center'>";
           echo"<div class='btn-group'>";
-            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
-            echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
+            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">Ver producto</button>";
+            echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Al carrito :D</button>";
           echo"</div>";
           echo"<small class='text-muted'>9 mins</small>";
         echo"</div>";
