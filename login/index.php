@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/album.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
   </head>
 
   <body>
@@ -22,6 +23,14 @@
         <a class="nav-link" href="login.php">Sign in</a>
         <a class="nav-link" href="logout.php">Sign out</a>
       </div>
+    </nav>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+
+      <form method="get">
+      <input name="arsa" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" method="get">
+      </form>
+
     </nav>
 
     <header>
@@ -43,16 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            <strong>Album</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" class="prueba"></span>
-          </button>
-        </div>
+      
       </div>
     </header>
 
@@ -95,6 +95,57 @@ while ($res = mysqli_fetch_array($query)){
 }
 
 }
+
+
+
+$arsa = $_GET['arsa'];
+
+echo $arsa;
+
+$consulta = mysqli_query($mysqli, "SELECT * FROM producto WHERE (nombre like '%$arsa%');");
+
+
+while ($res = mysqli_fetch_array($consulta)){
+
+  echo "<br/>";
+  echo "<img src=\"".$res['imagen']."\"width=\"150\" height=\"150\"/>";
+  echo"<div class='col-md-4'>";
+    echo"<div class='card mb-4 box-shadow'>";
+      echo"<div class='card-body'>";
+        echo"<p class='card-text'>".$res['descripcion']."</p>";
+        echo"<div class='d-flex justify-content-between align-items-center'>";
+          echo"<div class='btn-group'>";
+            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
+            echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
+          echo"</div>";
+          echo"<small class='text-muted'>9 mins</small>";
+        echo"</div>";
+      echo"</div>";
+    echo"</div>";
+  echo"</div>";
+
+
+}
+
+
+
+
+/*echo "<div class=\"col-md-4\">";
+  echo "<div class=\"card mb-4 box-shadow\">";
+  echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
+    
+      echo "<div class=\"card-body\">";
+        echo "<p class=\"card-text\">".$res['descripcion']."</p>";
+        echo "<div class=\"d-flex justify-content-between align-items-center\">";
+        echo "<div class=\"btn-group\">";
+          echo "<button type=\"button\" onclick=\"location.href='../productos/producto$cod.php'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
+          echo "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>";
+        echo "</div>";
+        echo "<small class=\"text-muted\">9 mins</small>";
+      echo "</div>";
+    echo "</div>";
+  echo "</div>";
+echo "</div>";*/
 ?>
           </div>
         </div>
@@ -125,19 +176,3 @@ while ($res = mysqli_fetch_array($query)){
 
 
 
-/*echo "<div class=\"col-md-4\">";
-  echo "<div class=\"card mb-4 box-shadow\">";
-  echo "<img class=\"card-img-top\" src=\"".$res['imagen']."\" width=\"150\" height=\"200\"/></td>";
-    
-      echo "<div class=\"card-body\">";
-        echo "<p class=\"card-text\">".$res['descripcion']."</p>";
-        echo "<div class=\"d-flex justify-content-between align-items-center\">";
-        echo "<div class=\"btn-group\">";
-          echo "<button type=\"button\" onclick=\"location.href='../productos/producto$cod.php'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
-          echo "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>";
-        echo "</div>";
-        echo "<small class=\"text-muted\">9 mins</small>";
-      echo "</div>";
-    echo "</div>";
-  echo "</div>";
-echo "</div>";*/

@@ -68,32 +68,11 @@
 <div class="product product-details clearfix">
 					<div class="col-md-6">
 						<div id="product-main-view">
-							<div class="product-view">
-								<img src="./img/main-product01.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/main-product02.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/main-product03.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/main-product04.jpg" alt="">
-							</div>
-						</div>
-						<div id="product-view">
-							<div class="product-view">
-								<img src="./img/thumb-product01.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product02.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product03.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product04.jpg" alt="">
-							</div>
+						<div data-slick-index="0" aria-hidden="false" style="width: 555; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1; overflow: hidden;" tabindex="0">
+								<?php 
+									include('cosa.php');
+									echo $photo;
+								?>
 						</div>
 					</div>
 					<div class="col-md-6">
