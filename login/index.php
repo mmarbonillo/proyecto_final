@@ -63,6 +63,11 @@
           <div class="row">
           <?php
 include("../config.php");
+include('searchbar.php');
+
+
+
+
 $consul = mysqli_query($mysqli, "SELECT * FROM producto");
 $cuenta = mysqli_num_rows($consul);
 
@@ -102,29 +107,9 @@ $arsa = $_GET['arsa'];
 
 echo $arsa;
 
-$consulta = mysqli_query($mysqli, "SELECT * FROM producto WHERE (nombre like '%$arsa%');");
-
-
-while ($res = mysqli_fetch_array($consulta)){
-
-  echo "<br/>";
-  echo "<img src=\"".$res['imagen']."\"width=\"150\" height=\"150\"/>";
-  echo"<div class='col-md-4'>";
-    echo"<div class='card mb-4 box-shadow'>";
-      echo"<div class='card-body'>";
-        echo"<p class='card-text'>".$res['descripcion']."</p>";
-        echo"<div class='d-flex justify-content-between align-items-center'>";
-          echo"<div class='btn-group'>";
-            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">View</button>";
-            echo"<button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>";
-          echo"</div>";
-          echo"<small class='text-muted'>9 mins</small>";
-        echo"</div>";
-      echo"</div>";
-    echo"</div>";
-  echo"</div>";
-
-
+if(!empty($_GET['arsa'])) {
+  header('Location: busqueda.php');
+  exit;
 }
 
 
