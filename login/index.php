@@ -27,7 +27,7 @@
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
 
-      <form method="get">
+      <form action="busqueda.php" method="get">
       <input name="arsa" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" method="get">
       </form>
 
@@ -63,7 +63,6 @@
           <div class="row">
           <?php
 include_once("../config.php");
-include('searchbar.php');
 
 
 
@@ -99,14 +98,14 @@ while ($res = mysqli_fetch_array($query)){
 }
 
 }
-
+/*
 $arsa = $_GET['arsa'];
 
 if(!empty($_GET['arsa'])) {
   header('Location: busqueda.php');
   exit;
 }
-
+*/
 
 
 /*echo "<div class=\"col-md-4\">";

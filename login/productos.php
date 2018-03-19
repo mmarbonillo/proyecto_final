@@ -45,6 +45,27 @@
                   Productos
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="addproducto.php">
+                  <span data-feather="shopping-cart"></span>
+                  Añadir producto
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="deleteproducto.php">
+                  <span data-feather="shopping-cart"></span>
+                  Eliminar producto
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="modproducto.php">
+                  <span data-feather="shopping-cart"></span>
+                  Modificar producto
+                </a>
+              </li>
               
             </ul>
           </div>

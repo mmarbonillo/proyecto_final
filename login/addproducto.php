@@ -13,64 +13,56 @@
   </head>
 
   <body class="text-center">
-    <form method="post">
+    <form method="get">
     <fieldset>
     <div>
-      <label for="Name" >Nombre del producto
-      <input type="text" name="name" placeholder="Product Name" required autofocus/></label>
+      <label for="Name" >Nombre del producto</label>
+      <input type="text" name="name" placeholder="Product Name" required autofocus>
     </div>
 
     <div>
-      <label for="precio" class="sr-only">Precio
-      <input type="text" name="precio" placeholder="Precio" required/></label>
+      <label for="precio" class="sr-only">Precio</label>
+      <input type="text" name="precio" placeholder="Precio" required>
     <div>
 
     <div>
-      <label for="fabricante" class="sr-only">Fabricante
-      <input type="text" name="fabricante" placeholder="Fabricante" required/></label>
+      <label for="fabricante" class="sr-only">Fabricante</label>
+      <input type="text" name="fabricante" placeholder="Fabricante" required>
     <div>
 
     <!--<div>
       <label for="imagen" class="sr-only">Imagen
-      <input type="text" name="imagen" placeholder="Ruta Imagen" /></label>
+      <input type="text" name="imagen" placeholder="Ruta Imagen"></label>
     <div>-->
 
     <div>
-      <label for="descripcion" class="sr-only">Descripcion
-      <input type="text" name="descripcion" placeholder="Descripcion" required/></label>
+      <label for="descripcion" class="sr-only">Descripcion</label>
+      <input type="text" name="descripcion" placeholder="Descripcion" required>
     <div> 
 
-      <button onclick="location.href='añadir.php'" type="button">Sign in</button>
+      <button type="submit">Añadir producto</button>
     </div>
     </fieldset>
     </form>
 
 <?php
-$namepost = $_POST['name'];
-$preciopost = $_POST['precio'];
-$fabripost = $_POST['fabricante'];
-#$imgpost = $_POST['imagen'];
-$descrippost = $_POST['descripcion'];
+include('../config.php');
 
-$fabri = mysqli_query($mysqli, "SELECT codigo FROM fabricante WHERE nombre = $fabripost");
+$namepost = $_GET['name'];
+$preciopost = $_GET['precio'];
+$fabripost = $_GET['fabricante'];
+#$imgpost = $_GET['imagen'];
+$descrippost = $_GET['descripcion'];
 
-$consulta = mysqli_query($mysqli, "INSERT INTO producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('$namepost', '$preciopost', '$fabri', 'imagen', '$descrippost')");
+$fabri = mysqli_query($mysqli, "SELECT * FROM fabricante WHERE nombre = '$fabripost'");
 
-/*
-if (!empty($namepost)){
-    $namepost = $_POST['name'];
-    if (!empty($preciopost)){
-        $preciopost = $_POST['precio'];
-        if (!empty($fabripost)){
-            $fabripost = $_POST['fabricante'];
-            if (!empty($descrippost)){
-                $descrippost = $_POST['descripcion'];
-                include('añadir.php');
-            } else { echo "Falta descripcion";}
-        } else { echo "Falta fabricante";}
-    }else { echo "Falta precio";}
-}else { echo "Falta nombre";}
-*/
+while ($res = mysqli_fetch_array($fabri)){
+    $cod = $res['codigo'];
+}
+
+
+$consulta = mysqli_query($mysqli, "INSERT INTO producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('$namepost', '$preciopost', '$cod', 'imagen', '$descrippost')");
+
 ?>
   </body>
 </html>

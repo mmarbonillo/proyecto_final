@@ -28,7 +28,7 @@
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">Company name</a>
 
-      <form method="get">
+      <form action="busqueda.php" method="get">
       <input name="arsa" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" method="get">
       </form>
 
@@ -36,8 +36,8 @@
 
 <?php
 include('../config.php');
-include('searchbar.php');
-$name = $_GET['name'];
+
+$name = $_GET['arsa'];
 
 $consulta = mysqli_query($mysqli, "SELECT * FROM producto WHERE (nombre like '%$name%')");
 

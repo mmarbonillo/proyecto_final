@@ -1,11 +1,11 @@
 <?php
-include('../config.php');
+include('addproducto.php');
 
-$namepost = $_POST['name'];
-$preciopost = $_POST['precio'];
-$fabripost = $_POST['fabricante'];
-#$imgpost = $_POST['imagen'];
-$descrippost = $_POST['descripcion'];
+$namepost = $_GET['name'];
+$preciopost = $_GET['precio'];
+$fabripost = $_GET['fabricante'];
+#$imgpost = $_GET['imagen'];
+$descrippost = $_GET['descripcion'];
 
 $fabri = mysqli_query($mysqli, "SELECT codigo FROM fabricante WHERE nombre = $fabripost");
 
