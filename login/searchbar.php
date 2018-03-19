@@ -1,6 +1,5 @@
 <?php
 
-
 $arsa = $_GET['arsa'];
 
 echo $arsa;

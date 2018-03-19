@@ -95,13 +95,10 @@ while ($res = mysqli_fetch_array($query)){
       echo"</div>";
     echo"</div>";
   echo"</div>";
-  echo"<button type='button' onclick=\"location.href='vercarro.php'\" class='btn btn-sm btn-outline-secondary'>Ver carrito :D</button>";
 
 }
 
 }
-
-print_r($_SESSION['carro']);
 
 $arsa = $_GET['arsa'];
 
