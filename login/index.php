@@ -62,7 +62,7 @@
 
           <div class="row">
           <?php
-include("../config.php");
+include_once("../config.php");
 include('searchbar.php');
 
 
@@ -87,7 +87,7 @@ while ($res = mysqli_fetch_array($query)){
         echo"<p class='card-text'>".$res['descripcion']."</p>";
         echo"<div class='d-flex justify-content-between align-items-center'>";
           echo"<div class='btn-group'>";
-            echo "<button type=\"button\" onclick=\"location.href='../productos/prueba.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">Ver producto</button>";
+            echo "<button type=\"button\" onclick=\"location.href='../productos/producto.php?codigo=".$res['codigo']."'\" class=\"btn btn-sm btn-outline-secondary\">Ver producto</button>";
             echo"<button type='button' onclick=\"location.href='añadircarro.php?cod=".$res['codigo']."'\" class='btn btn-sm btn-outline-secondary'>Al carrito :D</button>";
           echo"</div>";
           echo"<small class='text-muted'>9 mins</small>";
@@ -95,7 +95,7 @@ while ($res = mysqli_fetch_array($query)){
       echo"</div>";
     echo"</div>";
   echo"</div>";
-
+  echo"<button type='button' onclick=\"location.href='vercarro.php'\" class='btn btn-sm btn-outline-secondary'>Ver carrito :D</button>";
 
 }
 
@@ -109,7 +109,6 @@ if(!empty($_GET['arsa'])) {
   header('Location: busqueda.php');
   exit;
 }
-
 
 
 
@@ -153,7 +152,7 @@ echo "</div>";*/
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>  
   </body>
 </html>
 
