@@ -30,10 +30,10 @@
       <input type="text" name="fabricante" placeholder="Fabricante" required>
     <div>
 
-    <!--<div>
+    <div>
       <label for="imagen" class="sr-only">Imagen
       <input type="text" name="imagen" placeholder="Ruta Imagen"></label>
-    <div>-->
+    <div>
 
     <div>
       <label for="descripcion" class="sr-only">Descripcion</label>
@@ -51,7 +51,7 @@ include('../config.php');
 $namepost = $_GET['name'];
 $preciopost = $_GET['precio'];
 $fabripost = $_GET['fabricante'];
-#$imgpost = $_GET['imagen'];
+$imgpost = $_GET['imagen'];
 $descrippost = $_GET['descripcion'];
 
 $fabri = mysqli_query($mysqli, "SELECT * FROM fabricante WHERE nombre = '$fabripost'");
@@ -61,7 +61,7 @@ while ($res = mysqli_fetch_array($fabri)){
 }
 
 
-$consulta = mysqli_query($mysqli, "INSERT INTO producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('$namepost', '$preciopost', '$cod', 'imagen', '$descrippost')");
+$consulta = mysqli_query($mysqli, "INSERT INTO producto(nombre, precio, codigo_fabricante, imagen, descripcion) values('$namepost', '$preciopost', '$cod', '../fotos/$imgpost.png', '$descrippost')");
 
 ?>
   </body>

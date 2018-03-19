@@ -1,5 +1,5 @@
 <?php
-
+include('../config.php');
 session_start();
 
 if($_SESSION['canAccess'] == false) {
@@ -75,7 +75,7 @@ mysqli_close($mysqli);
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="deleteproducto.php">
+                <a class="nav-link" href="modproducto.php">
                   <span data-feather="shopping-cart"></span>
                   Modificar producto
                 </a>

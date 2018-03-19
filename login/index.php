@@ -26,6 +26,7 @@
     </nav>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.php">Dashboard</a>
 
       <form action="busqueda.php" method="get">
       <input name="arsa" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" method="get">
@@ -68,15 +69,10 @@ include_once("../config.php");
 
 
 $consul = mysqli_query($mysqli, "SELECT * FROM producto");
-$cuenta = mysqli_num_rows($consul);
-
-for($cod = 1; $cod <= $cuenta; $cod++) {
-  
-  echo "<tr>";
-  $query = mysqli_query($mysqli, "SELECT * FROM producto WHERE codigo = $cod");
 
 
-while ($res = mysqli_fetch_array($query)){
+
+while ($res = mysqli_fetch_array($consul)){
 
   echo "<br/>";
   echo "<img src=\"".$res['imagen']."\"width=\"150\" height=\"150\"/>";
@@ -97,7 +93,7 @@ while ($res = mysqli_fetch_array($query)){
 
 }
 
-}
+
 /*
 $arsa = $_GET['arsa'];
 
